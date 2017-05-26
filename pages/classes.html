@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Folkert Framework</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="../css/folkert-min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body id="classes">
+    <div class="grid--wrapper">
+        <input id="nav--toggle" type="checkbox">
+        <header class="ngrid--row">
+                <label for="nav--toggle" id="nav--toggle-icon">☰</label>
+                <h1>Folkert Framework</h1>
+                <nav class="nav--responsive-sidebar">
+                    <ul>
+                        <li><a href="../index.html">Introduction</a></li>
+                        <li><a href="features.html">Features and customization</a></li>
+                        <li><a href="" class="active-tab">Classes and how to use them</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+        </header>
+        <aside id="page-menu"class="ngrid--row">
+            <div>
+                <h2>Menu</h2>
+                <ul class="list-no-decoration inline-list">
+                    <li><a href="#grid">Grid classes</a></li>
+                    <li><a href="#navigation">Navigation classes</a></li>
+                    <li><a href="#typography">Typography classes</a></li>
+                    <li><a href="#buttons">Button classes</a></li>
+                    <li><a href="#form">Form classes</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <section id="features">
+
+                <article id="prefixes">
+                    <div class="ngrid--row">
+                        <div>
+                            <h2 class="bold-text">Classes and how to use them</h2>
+
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h3>Prefixes</h3>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <p>This framework makes mostly use of prefixes. All classes that are part of a group get the same prefix.</p>
+                            <!-- =============================================== -->
+                            <h4>List of prefixes</h4>
+                            <ul>
+                                <li>Float Grid prefix: grid--</li>
+                                <li>New Grid prefix: ngrid--</li>
+                                <li>Navigation prefix: nav--</li>
+                                <li>Button prefix: button--</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="grid">
+                    <div class="ngrid--row">
+                        <div>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h3>Grid classes</h3>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h4 class="bold-text">12 column Float grid classes</h4>
+                            <p>To align items in a grid, the float grid needs you to wrap all the elements you want in one column inside a div with a class of grid--col and then make a parent div with a class of grid--row. You can add extra classes to columns to determine the size of the element on different screen types.</p>
+                        </div>
+                    </div>
+                    <div class="ngrid--row ngrid--columns-m3">
+                        <div>
+                            <h5>.grid--wrapper</h5>
+                            <code class="dim-text"><span><</span>div class="grid--wrapper">[elements you want to wrap go here]<span><</span>/div></code>
+                            <p>Defines the maximum width of the element that it's used on.</p>
+                        </div>
+                        <div>
+                            <h5>.grid--row</h5>
+                            <code class="dim-text"><span><</span>div class="grid--row">[columns go here]<span><</span>/div></code>
+                            <p>Used on a div which has child elements inside of it with a class of grid--col. Defines a row inside the grid.</p>
+                        </div>
+                        <div>
+                            <h5>.grid--col</h5>
+                            <code class="dim-text"><span><</span>div class="grid--col">[elements for inside this column go here]<span><</span>/div></code>
+                            <p>Every element with this class will be a column inside a row. The standard width of a column is 100% of the available width. You can define the amount of columns in a specific row per screen size by adding the following classes:</p>
+                            <ul>
+                                <li>.s1 till .s12</li>
+                                <li>.m1 till .m12</li>
+                                <li>.l1 till .l12</li>
+                            </ul>
+                            <p>The s classes tell the grid: on a mobile device, this column should be [1 to 12] parts amount of the available 12 parts of space in this row. (12 is full width of the row). The m classes tell the grid the same for tablet devices and the l classes tell the grid the same for desktops.</p>
+                        </div>
+                    </div>
+                    <div class="ngrid--row">
+                        <div>
+                            <h6>Small example:</h6>
+                            <p>If you want a column to take up the entire width on a mobile phone (standard, so no s class needed), take up 6 parts of the width on tablet devices (half the width, 6/12) and 4 parts of the width on desktops (one-third of the width, 4/12), this would be your whole grid syntax: </p>
+                            <code class="dim-text"><span><</span>div class="grid--row"><span><</span>div class="grid--col m-6 l-4">[elements you want placed inside the column go here]<span><</span>/div><span><</span>/div> </code>
+                        </div>
+                    </div>
+                    <div class="ngrid--row">
+                        <div>
+                            <!-- =============================================== -->
+                            <h4 class="bold-text">New grid classes</h4>
+                            <p>The New Grid makes use of <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">the new css layout, display: grid</a>. This means that the syntax for making a row and columns is a little different. You actually tell the parent via classes how much space his children should take. Using the example of float grid above, the syntax becomes this:</p>
+                            <code class="dim-text"><span><</span>div class="ngrid--row ngrid--columns-m2 ngrid--columns-l3">[elements you want placed inside the column go here]<span><</span>/div> </code>
+                            <p>As you can see, this isn't based on 12 columns. You just tell the parent it has 2 columns when it's on a tablet device and 3 columns when it's on a desktop. If you give this row 3 children, they will all be above eachoter on mobile, 2 next to eachother and 1 underneath on tablet devices and all 3 next to eachother on desktops. </p><h6 class="warning-text">Warning: display: grid is not yet fully supported as of now in microsoft edge!</h6>
+                            <h6 class="warning-text">Warning: currently when using asymetrical designs you need to put columns in your HTML file from top to bottom in the same order as you want them to display left to right. I'm working on support for asymetrical designs without a required order in the HTML file.</h6>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="navigation">
+                    <div class="ngrid--row">
+                        <div>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h3>Responsive Navigation classes</h3>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h4>Horizontal navigation list to full width</h4>
+                            <p>The simplest form of a clean looking, responsive navigation menu is a horizontal list, where the items become stacked on top of eachoter on mobile phones.<p>
+                        </div>
+                    </div>
+                    <div class="ngrid--row ngrid--columns-m2">
+                        <div>
+                            <h5>.nav--inline-list</h5>
+                            <code class="dim-text"><span><</span>nav class="nav--inline-list">[Your list of anchor tags go here]<span><</span>/nav> </code>
+                            <p>Just add the class 'nav--inline-list' to your nav element and you will have a fully responsive navigation menu!</p>
+                        </div>
+                        <div>
+                            <h5>.active-tab</h5>
+                            <code class="dim-text"><span><</span>li class="acitve-tab">[anchor tag and text go here]<span><</span>/li> </code>
+                            <p>Adding the "acitve-tab" class to your list items will highlight them! On this site i used this to show which page you are on.</p>
+                        </div>
+                    </div>
+                    <div class="ngrid--row">
+                        <div>
+                            <!-- =============================================== -->
+                            <h4>Horizontal navigation list to slide-in menu</h4>
+                            <h6 class="warning-text">This slide-in menu is based on a trick with HTML and CSS so no javascript would be needed for this Framework. However, this results in the slide-in menu not working on a few mobile browsers, like Samsung's standard mobile web browser.</h6>
+                            <p>This slide-in menu is a bit more tricky than just adding a class to your nav element. You will need the following code:</p>
+                            <img src="../images/nav--code-needed.png" alt="Printscreen of code needed for slide-in-menu to work">
+                            <p>The white box is where your links go.</p>
+                            <p>The yellow box is where the icon for the slide-in menu goes (text-based, but you could play around a bit with background images or regular images etc.)</p>
+                            <p>The purple box is where your site title goes, on this site it's Folkert Framework.</p>
+
+                            <p> (Going to add a copyable code for this here in the future)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="typography">
+                    <div class="ngrid--row">
+                        <div>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h3>Typography Classes</h3>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <p>Can be added on any element, but mostly works on h1, h2, h3, h4, h5, h6 and p elements.</p>
+                        </div>
+                    </div>
+                    <div class="ngrid--row ngrid--columns-m2">
+                        <div>
+                            <p>Centering text in an element:</p>
+                            <code><span><</span>p class="center-text"><span>[your text goes here]<</span>/p>
+                            </code>
+                        </div>
+                        <div>
+                            <p>Making text in an element <span class="bold-text">bold</span>:</p>
+                            <code><span><</span>p class="bold-text"><span>[your text goes here]<</span>/p></code>
+                        </div>
+                        <div>
+                            <p>Warning text:</p>
+                            <code><span><</span>p class="warning-text"><span>[your text goes here]<</span>/p>
+                            </code>
+                        </div>
+                        <div>
+                            <p>Desaturated text:</p>
+                            <code><span><</span>p class="dim-text"><span>[your text goes here]<</span>/p>
+                            </code>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="buttons">
+                    <div class="ngrid--row">
+                        <div>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h3>Buttons</h3>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                        </div>
+                    </div>
+                    <div class="ngrid--row ngrid--columns-m2">
+                        <div>
+                            <h4>Default Buttons</h4>
+                            <button>Default</button><button class="button--inverted">Inverted</button>
+                            <code><span><</span>button><span>Default<</span>/button>
+                            </code>
+                            <code><span><</span>button class="button--inverted"><span>Inverted<</span>/button>
+                            </code>
+                            <p>The default buttons come in two variants: default and inverted. If you want a default button, just make a button. If you want an anchor tag to look like a button, add the class of "button" to it. Example with an anchor tag that looks like an inverted button:</p> <code><span><</span>a href="" class="button button--inverted"><span>[your text goes here]<</span>/a>
+                            </code>
+                            <p>Result:</p>
+                            <a href="#buttons" class="button button--inverted">[your text goes here]</a>
+                        </div>
+                        <div>
+                            <h4>Material Design Buttons</h4>
+                            <button class="button--material">Default Material</button><button class="button--material button--round">Material round</button><button class="button--material button--round button--to-straight">Round to straight</button>
+                            <code><span><</span>button class="button--material"><span>Default Material<</span>/button>
+                            </code>
+                            <code><span><</span>button class="button--material button--round"><span>Material round<</span>/button>
+                            </code>
+                            <code><span><</span>button class="button--material button--round button--to-straight"><span>Round to straight<</span>/button>
+                            </code>
+                            <p>The material design buttons come in three variants: Material Default, Material Round and Material Round to-straight. Just use the code above. Again, this works with anchor tags as long as you put the class of button on the element as well. Example with an anchor tag that looks like an inverted button:</p> <code><span><</span>a href="" class="button button--material"><span>[your text goes here]<</span>/a>
+                            </code>
+                            <p>Result:</p>
+                            <a href="#buttons" class="button button--material">[your text goes here]</a>
+                        </div>
+                        <div>
+                            <h4>Centering buttons on small screens</h4>
+                            <button class="button--center-s">Centered on mobile</button>
+                            <code><span><</span>button class="button--center-s"><span>Centered on mobile<</span>/button>
+                            </code>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="form">
+                    <div class="ngrid--row">
+                        <div>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                            <h3>Forms</h3>
+                            <!-- /////////////////////////////////////////////////////////// -->
+                        </div>
+                    </div>
+                    <div class="ngrid--row ngrid--columns-m2">
+                        <div>
+                            <h4>Default form</h4>
+                            <form action="#form">
+                                <label for="name">Full name:</label>
+                                <input type="text" id="name" placeholder="Firstname Lastname">
+                                <label for="date">Date of birth: </label>
+                                <input type="date" id="date">
+                                <label for="email">E-mail: </label>
+                                <input type="email" id="email" placeholder="email@mailme.com">
+                                <input type="submit" class="button" value="Submit">
+                            </form>
+                            <p>No code needed! this is just a form element!</p>
+                        </div>
+                        <div>
+                            <h4>Material Design form</h4>
+                            <form class="form--material" action="#form">
+                                <label for="name">Full name:</label>
+                                <input type="text" id="name" placeholder="Firstname Lastname">
+                                <label for="date">Date of birth: </label>
+                                <input type="date" id="date">
+                                <label for="email">E-mail: </label>
+                                <input type="email" id="email" placeholder="email@mailme.com">
+                                <input type="submit" class="button" value="Submit">
+                            </form>
+                            <p>Just add the class of form--material to your form:</p>
+                            <code><span><</span>form class="form--material"><span>[your form goes here]<</span>/form>
+                            </code>
+                        </div>
+                    </div>
+                    <div class="ngrid--row">
+                        <div>
+                            <h4>Other form classes</h4>
+                            <p>Centering a form:</p>
+                            <code><span><</span>form class="form--center"><span>[your form goes here]<</span>/form>
+                            </code>
+                            <p>Using a button to submit instead of an input:</p>
+                            <code><span><</span>button class="submit"><span>[your text goes here]<</span>/button></code>
+                        </div>
+                    </div>
+                </article>
+
+
+            </section>
+
+
+        </main>
+
+        <footer class="ngrid--row">
+                <div class="center-text">
+                    <p class="dim-text">&#169; 2017 Folkert-Jan van der Pol - Made with the <a class="dim-text" href="https://github.com/FJvdPol/folkert-framework">Folkert Framework</a></p>
+                </div>
+            </footer>
+    </div>
+    <div class="to-top-button-container">
+            <a href="#classes"class="button button--inverted">Back to top ^</a>
+        </div>
+</body>
+
+</html>

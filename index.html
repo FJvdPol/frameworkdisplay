@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Folkert Framework</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/folkert-min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="grid--wrapper">
+        <input id="nav--toggle" type="checkbox">
+        <header class="ngrid--row">
+                <label for="nav--toggle" id="nav--toggle-icon">☰</label>
+                <h1>Folkert Framework</h1>
+                <nav class="nav--responsive-sidebar">
+                    <ul>
+                        <li><a class="active-tab" href="#introduction">Introduction</a></li>
+                        <li><a href="pages/features.html">Features and customization</a></li>
+                        <li><a href="pages/classes.html">Classes and how to use them</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+        </header>
+
+        <main>
+            <section id="introduction">
+                <div class="ngrid--row">
+                    <article>
+                        <h2 class="bold-text">Introduction</h2>
+                        <p>Folkert Framework is a Responsive CSS Framework, made by Folkert-Jan van der Pol. It features 2 grid systems, one based on floats and one based on the recently supported display: grid. This particular framework doesn't use scripts.</p>
+                        <a href="pages/features.html" class="button">See all features</a>
+                        <a href="https://github.com/FJvdPol/folkert-framework" target="_blank" class="button button--inverted">Get it now! (github link)</a>
+                    </article>
+                </div>
+            </section>
+            <div class="ngrid--row ngrid--columns-m2">
+                <section id="howtoget">
+                    <article>
+                        <h2 class="bold-text">How to get</h2>
+                        <p>Add the following code inside your site's head tags and you will have all features available to your site:</p> <code class="dim-text"><span><</span>link rel="stylesheet" href="https://raw.githubusercontent.com/FJvdPol/folkert-framework/master/css/folkert-min.css"></code>
+                        <a href="https://github.com/FJvdPol/folkert-framework" target="_blank" class="button">Option #2: View on Github</a>
+                    </article>
+                </section>
+                <section id="howtouse">
+                    <article>
+                        <h2 class="bold-text">How to use</h2>
+                        <p>As most Frameworks out there, you can make use of all the features that come with this project by adding specific classes to your HTML elements. To make a link look like a button, you simply add a class of 'Button' to it.</p>
+                        <a href="pages/classes.html" class="button">Full list of classes</a>
+                    </article>
+                </section>
+            </div>
+            <section id="contact">
+                <div class="ngrid--row">
+                    <article>
+                        <h2 class="bold-text">Contact</h2>
+                        <p>You can contact me via:</p>
+                        <a class="button button--inverted" href="https://github.com/FJvdPol" target="_blank">Github</a>
+                    </article>
+                </div>
+            </section>
+
+
+        </main>
+
+        <footer class="ngrid--row">
+            <div class="center-text">
+                <p class="dim-text">&#169; 2017 Folkert-Jan van der Pol - Made with the <a class="dim-text" href="https://github.com/FJvdPol/folkert-framework">Folkert Framework</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

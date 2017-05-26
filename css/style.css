@@ -1,0 +1,36 @@
+body {
+    background-color: #efefef;
+}
+.grid--wrapper {
+    background-color: white;
+}
+.ngrid--row {
+    margin-bottom: 20px;
+}
+section {
+    margin-bottom: 50px;
+}
+.dark-bg > div{
+    border-bottom: 2px solid #cecece;
+}
+header.ngrid--row,
+footer.ngrid--row {
+    margin-bottom: 0;
+}
+.to-top-button-container {
+    position: fixed;
+    bottom: 50px;
+    right: 10%;
+}
+code {
+    font-size: 14px;
+    background-color: lightgrey;
+    display: block;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+h4,
+h5,
+h6 {
+    padding-top: 0.5rem;
+}
