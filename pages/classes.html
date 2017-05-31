@@ -196,7 +196,7 @@
                     <div class="ngrid--row ngrid--columns-m2">
                         <div>
                             <h4>Default Buttons</h4>
-                            <button>Default</button><button class="button--inverted">Inverted</button>
+                            <button class="button">Default</button><button class="button button--inverted">Inverted</button>
                             <code><span><</span>button><span>Default<</span>/button>
                             </code>
                             <code><span><</span>button class="button--inverted"><span>Inverted<</span>/button>
@@ -208,7 +208,7 @@
                         </div>
                         <div>
                             <h4>Material Design Buttons</h4>
-                            <button class="button--material">Default Material</button><button class="button--material button--round">Material round</button><button class="button--material button--round button--to-straight">Round to straight</button>
+                            <button class="button button--material">Default Material</button><button class="button button--material button--round">Material round</button><button class="button button--material button--round button--to-straight">Round to straight</button>
                             <code><span><</span>button class="button--material"><span>Default Material<</span>/button>
                             </code>
                             <code><span><</span>button class="button--material button--round"><span>Material round<</span>/button>
@@ -222,7 +222,7 @@
                         </div>
                         <div>
                             <h4>Centering buttons on small screens</h4>
-                            <button class="button--center-s">Centered on mobile</button>
+                            <button class="button button--center-s">Centered on mobile</button>
                             <code><span><</span>button class="button--center-s"><span>Centered on mobile<</span>/button>
                             </code>
                         </div>
@@ -240,7 +240,7 @@
                     <div class="ngrid--row ngrid--columns-m2">
                         <div>
                             <h4>Default form</h4>
-                            <form action="#form">
+                            <form class="form--default" action="#form">
                                 <label for="name">Full name:</label>
                                 <input type="text" id="name" placeholder="Firstname Lastname">
                                 <label for="date">Date of birth: </label>
@@ -249,7 +249,9 @@
                                 <input type="email" id="email" placeholder="email@mailme.com">
                                 <input type="submit" class="button" value="Submit">
                             </form>
-                            <p>No code needed! this is just a form element!</p>
+                            <p>Just add the class of form--default to your form:</p>
+                            <code><span><</span>form class="form--default"><span>[your form goes here]<</span>/form>
+                            </code>
                         </div>
                         <div>
                             <h4>Material Design form</h4>
